@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <p>Random Number: {{ number }}</p>
+            <p>The list of random numbers: {{ newStr }}</p>
+            <button v-on:click="randomize">Click</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data:()=>{
+                return {
+                   number: 0,
+                   arr:[],
+                   newStr:0
+                   
+                   
+                }
+            },
+            methods:{
+                randomize(){
+                    
+                     this.number = Math.floor(Math.random()*10)
+                     this.arr.push(this.number);
+                     this.newStr = this.arr.toString();
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+
+</body>
+</html>
